@@ -10,7 +10,7 @@ import {
   TableRow
 } from '@/components/ui/table';
 import { deleteDoc, doc } from 'firebase/firestore';
-import { db } from 'firebase';
+import { db } from '../firebase';
 import {
   Dispatch,
   MouseEvent,

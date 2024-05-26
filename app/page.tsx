@@ -1,9 +1,9 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import { extractKeys, sortUsersById } from '@/lib/utils';
-import { db } from 'firebase';
+import { db } from '../firebase';
 import { collection, doc, getDocs, writeBatch } from 'firebase/firestore';
-import 'jspdf-autotable';
+import autoTable from 'jspdf-autotable';
 import jsPDF from 'jspdf';
 import { LoaderCircle } from 'lucide-react';
 import Papa from 'papaparse';
@@ -94,7 +94,7 @@ export default function IndexPage() {
 
     doc.text('Student Records', margin, 10);
 
-    doc.autoTable({
+    autoTable(doc, {
       head: [tableColumn],
       body: tableRows,
       startY: 20,
